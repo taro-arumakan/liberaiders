@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "aside",
+  "name": "Overlay Group",
+  "sections": {
+    "popup": {
+      "type": "popup",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": { "social-title": "" }
+        },
+        "small-promotion": { "type": "small-promotion", "settings": {} },
+        "large-promotion": { "type": "large-promotion", "settings": {} },
+        "consent-tracking": { "type": "consent-tracking", "settings": {} }
+      },
+      "block_order": ["newsletter", "small-promotion", "large-promotion", "consent-tracking"],
+      "settings": {}
+    },
+    "age-verification": {
+      "type": "age-verification",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": ["popup", "age-verification"]
+}
