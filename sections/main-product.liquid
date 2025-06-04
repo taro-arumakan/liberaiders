@@ -82,6 +82,14 @@
       </div>
     {%- endif -%}
 
+    {%-
+      render 'product--heading-blocks',
+      product: product,
+      section: section,
+      onboarding: false,
+      main_product: true
+    -%}
+
     <div class="main-product--desktop" data-mq="medium-large">
       {%-
         render 'product-media--variants',
@@ -440,7 +448,14 @@
       "type": "heading",
       "name": "Title",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show-above-image",
+          "label": "Show above image",
+          "default": false
+        }
+      ]
     },
     {
       "type": "label",
@@ -504,7 +519,14 @@
       "type": "price",
       "name": "Price",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show-above-image",
+          "label": "Show above image",
+          "default": false
+        }
+      ]
     },
     {
       "type": "quantity-selector",
@@ -691,7 +713,14 @@
       "type": "sku",
       "name": "SKU",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show-above-image",
+          "label": "Show above image",
+          "default": false
+        }
+      ]
     },
     {
       "type": "collapsible-row",
