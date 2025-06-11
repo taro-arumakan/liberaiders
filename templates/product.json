@@ -94,9 +94,9 @@
         "sku_G3aCD3"
       ],
       "settings": {
-        "container-width": "4",
-        "spacing-above": "full",
-        "spacing-below": "full",
+        "container-width": "6",
+        "spacing-above": "half",
+        "spacing-below": "half",
         "media-layout": "thumbnails",
         "text-column-width": 375,
         "media-gap": 8,
@@ -112,7 +112,7 @@
         "image-zoom-enabled": true,
         "loop-enabled": false,
         "mobile-spacing-above": "none",
-        "mobile-spacing-below": "half",
+        "mobile-spacing-below": "none",
         "mobile-media-layout": "thumbnails"
       }
     },
