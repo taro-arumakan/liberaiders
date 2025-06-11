@@ -147,6 +147,7 @@
         "store-message-1",
         "store-message-3"
       ],
+      "disabled": true,
       "settings": {
         "home-page-only": false,
         "border": "none",
