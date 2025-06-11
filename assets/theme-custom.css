@@ -1,0 +1,7 @@
+.product--heading-block {
+  margin: auto;
+}
+
+.main-product--wrapper{
+  --spacing--block: var(--spacing--2);
+}

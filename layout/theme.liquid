@@ -34,7 +34,16 @@
       render 'custom-styles'
     -%}
 
+    <style>
+      @font-face {
+        font-family: 'FranklinGothicURWConDem';
+        src: url("{{ 'FranklinGothicURWConDem.woff2' | asset_url }}") format('woff2');
+        font-weight: normal;
+      }
+    </style>
+
     {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'theme-custom.css' | asset_url | stylesheet_tag: preload: true }}
     {{ content_for_header }}
     {%- render 'routes' -%}
 
