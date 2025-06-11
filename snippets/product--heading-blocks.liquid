@@ -11,16 +11,16 @@
 -%}
 
 {%- for block in section.blocks -%}
-  <div
-    class="product--block"
-    data-block-type="{{ block.type }}"
-    data-fit-together="{{ fit_together }}"
-    {{- block.shopify_attributes -}}
-  >
-    {%- if block.settings.show-above-image -%}
+  {%- if block.settings.show-above-image -%}
+    <div
+      class="product--heading-block"
+      data-block-type="{{ block.type }}"
+      data-fit-together="{{ fit_together }}"
+      {{- block.shopify_attributes -}}
+    >
       {%- case block.type -%}
         {%- when 'overline' -%}
-          <div class="product--block--overline" data-item="overline">
+          <div class="product--heading-block--overline" data-item="overline">
             {%- liquid
               if onboarding
                 echo 'sections.onboarding.overline' | t
@@ -37,7 +37,7 @@
               data-transition-type="slide-in"
             {% endunless %}
           >
-            <h2 class="product--block--heading" data-item="section-heading">
+            <h2 class="product--heading-block--heading" data-item="section-heading">
               {%- unless main_product or onboarding -%}
                 <a href="{{ product.url }}">
               {%- endunless -%}
@@ -126,6 +126,6 @@
           {{- block.settings.custom-liquid -}}
 
       {%- endcase -%}
-    {%- endif -%}
-  </div>
+    </div>
+  {%- endif -%}
 {%- endfor -%}
