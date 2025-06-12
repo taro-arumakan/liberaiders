@@ -243,9 +243,10 @@
 
         {%- when 'collapsible-row' -%}
           {%- assign block_id = section.id | append: '--collapsible-row--' | append: forloop.index -%}
+          {%- assign collapsible_content = block.settings.liquid | default: block.settings.content %}
           {%-
             render 'collapsible-row',
-            description: block.settings.description,
+            description: collapsible_content,
             heading: block.settings.heading,
             default_open: block.settings.default-open,
             page_content: block.settings.page-content,
@@ -258,7 +259,7 @@
               {%- liquid
                 if block.settings.collapsible-row-enabled
                   assign block_id = section.id | append: '-' | append: block.id
-                  render 'collapsible-row', heading: block.settings.heading, description: product.description, id: block_id
+                  render 'collapsible-row', heading: block.settings.heading, description: product.description, default_open: block.settings.default-open, id: block_id
                 else
                   echo product.description
                 endif
