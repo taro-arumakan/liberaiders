@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "liquid_y73nA8": {
+          "type": "liquid",
+          "settings": {
+            "custom-liquid": "No: {{ product.metafields.custom.product_number }}",
+            "show-above-image": true
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
@@ -52,8 +59,29 @@
         "description": {
           "type": "description",
           "settings": {
-            "collapsible-row-enabled": false,
-            "heading": "Description"
+            "collapsible-row-enabled": true,
+            "heading": "Description",
+            "default-open": true
+          }
+        },
+        "collapsible_row_Eezjm6": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "size (cm)",
+            "description": "<p>Use rows to highlight unique features, <br/>sizing information, <br/>or other sales information.</p>",
+            "page-content": "",
+            "liquid": "{{ product.metafields.custom.size_table_html_ja }}",
+            "default-open": true
+          }
+        },
+        "collapsible_row_KKkdfR": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "size (inch)",
+            "description": "<p>Use rows to highlight unique features, <br/>sizing information, <br/>or other sales information.</p>",
+            "page-content": "",
+            "liquid": "{{ product.metafields.custom.size_table_html_en }}",
+            "default-open": true
           }
         },
         "complementary-products": {
@@ -73,15 +101,10 @@
             "email-enabled": true,
             "url-enabled": true
           }
-        },
-        "sku_G3aCD3": {
-          "type": "sku",
-          "settings": {
-            "show-above-image": true
-          }
         }
       },
       "block_order": [
+        "liquid_y73nA8",
         "heading",
         "price",
         "options",
@@ -89,9 +112,10 @@
         "unavailable_form_pqDNGH",
         "pickup",
         "description",
+        "collapsible_row_Eezjm6",
+        "collapsible_row_KKkdfR",
         "complementary-products",
-        "social-sharing",
-        "sku_G3aCD3"
+        "social-sharing"
       ],
       "settings": {
         "container-width": "6",
