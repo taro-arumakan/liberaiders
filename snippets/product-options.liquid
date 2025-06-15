@@ -10,6 +10,12 @@
 -%}
 
 {%- unless product.has_only_default_variant -%}
+  {% if grid %}
+  {% liquid
+      assign swatches = 'none'
+      assign variant_style = 'radios'
+  %}
+  {% endif %}
   <product-options-element
     class="product-options--root"
     data-id="{{ id }}"
@@ -87,4 +93,83 @@
       -%}
     </script>
   </product-options-element>
+
+  {% if grid %}
+    <table id="options_grid">
+      <thead>
+        <tr>
+          <th></th>
+          {%- for color in product.options_with_values[0].values -%}
+            <th>{{ color | escape }}</th>
+          {%- endfor -%}
+        </tr>
+      </thead>
+      <tbody>
+        {%- for size in product.options_with_values[1].values -%}
+          <tr>
+            <th>{{ size }}</th>
+            {%- for color in product.options_with_values[0].values -%}
+              {% liquid
+              assign this_variant = product.variants | where: "option1", color | where: "option2", size | first
+              %}
+              <td>
+                {{ this_variant.id }}
+                {%- if this_variant.available -%}
+                  <input
+                    class="radios--input"
+                    type="radio"
+                    id="{{ radios_name }}-{{ this_variant.id }}"
+                    name="option_selection"
+                    data-option1-name="{{ product.options_with_values[0].name | escape }}"
+                    data-option2-name="{{ product.options_with_values[1].name | escape }}"
+                    data-option1-value={{ color | escape }}
+                    data-option2-value={{ size | escape }}
+                    value="{{ this_variant.id }}"
+                  />
+                {%- else -%}
+                  <span class="unavailable" aria-hidden="true">×</span>
+                {%- endif -%}
+              </td>
+            {%- endfor -%}
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+    <script>
+      function updateRadioSelection(optionName, value) {
+        // Query all radio buttons with the specified data-option-name
+        const radios = document.querySelectorAll(`.product-options--option input[type="radio"][data-option-name="${optionName}"]`);
+
+        radios.forEach((radio) => {
+          if (radio.value === value) {
+            // Set the checked attribute
+            radio.checked = true;
+            const changeEvent = new Event('change', { bubbles: true, cancelable: true });
+            radio.dispatchEvent(changeEvent);
+          } else {
+            // Uncheck the other radio buttons
+            radio.checked = false;
+          }
+        });
+      }
+      document.getElementById('options_grid').addEventListener('change', (event) => {
+        if (event.target.type === 'radio') {
+          const selectedRadio = event.target;
+          const color = selectedRadio.getAttribute('data-option1-value');
+          const size = selectedRadio.getAttribute('data-option2-value');
+
+          const option1name = selectedRadio.getAttribute('data-option1-name');
+          const option2name = selectedRadio.getAttribute('data-option2-name');
+
+          // Update dropdowns
+          parent = document.querySelector('.product-options--root');
+          updateRadioSelection(option1name, color);
+          setTimeout(() => {
+            updateRadioSelection(option2name, size);
+          }, 50); // Adjust delay as needed
+        }
+      });
+    </script>
+  {% endif %}
+
 {%- endunless -%}
