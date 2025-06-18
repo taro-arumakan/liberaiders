@@ -84,7 +84,7 @@ quantity-selector,
   padding: 0 var(--spacing--item) var(--spacing--item);
 }
 
-.quantity-selector--root {
+.quantity-selector--root:not([data-type="cart"]) {
   display: flex;
   gap: 3rem;
   justify-content: space-between;
