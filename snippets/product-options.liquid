@@ -126,8 +126,8 @@
                       type="radio"
                       id="{{ radios_name }}-{{ this_variant.id }}"
                       name="option_selection"
-                      data-option1-name="{{ product.options_with_values[0].name | escape }}"
-                      data-option2-name="{{ product.options_with_values[1].name | escape }}"
+                      data-option1-name="{{ product.options_with_values[0].name | strip | downcase }}"
+                      data-option2-name="{{ product.options_with_values[1].name | strip | downcase }}"
                       data-option1-value={{ color | escape }}
                       data-option2-value={{ size | escape }}
                       value="{{ this_variant.id }}"
