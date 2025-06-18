@@ -191,7 +191,7 @@
         "overlap-behavior": "drawer",
         "logo": "{{ shop.brand.logo }}",
         "logo-height": 35,
-        "mobile-logo-height": 30,
+        "mobile-logo-height": 25,
         "transparent-enabled": true,
         "transparent-white-text": true,
         "menu": "main-menu",

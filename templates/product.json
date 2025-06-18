@@ -15,7 +15,7 @@
         "liquid_y73nA8": {
           "type": "liquid",
           "settings": {
-            "custom-liquid": "No: {{ product.metafields.custom.product_number }}",
+            "custom-liquid": "<style>\n  h2 {\n    margin-block-start: 3.62rem;\n    margin-block-end: 0.44rem;\n    font-size: 1.25rem;\n    font-style: normal;\n    font-weight: 400;\n    line-height: 1.4375rem; /* 115% */\n  }\n</style>\n<h2>\nNo: {{ product.metafields.custom.product_number }}\n</h2>",
             "show-above-image": true
           }
         },
@@ -29,6 +29,34 @@
           "type": "price",
           "settings": {
             "show-above-image": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapsible-row-enabled": true,
+            "heading": "Description",
+            "default-open": true
+          }
+        },
+        "collapsible_row_Eezjm6": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "size (cm)",
+            "description": "<p>Use rows to highlight unique features, <br/>sizing information, <br/>or other sales information.</p>",
+            "page-content": "",
+            "liquid": "{{ product.metafields.custom.size_table_html_ja }}",
+            "default-open": true
+          }
+        },
+        "collapsible_row_KKkdfR": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "size (inch)",
+            "description": "<p>Use rows to highlight unique features, <br/>sizing information, <br/>or other sales information.</p>",
+            "page-content": "",
+            "liquid": "{{ product.metafields.custom.size_table_html_en }}",
+            "default-open": false
           }
         },
         "options": {
@@ -60,34 +88,6 @@
           "type": "pickup",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapsible-row-enabled": true,
-            "heading": "Description",
-            "default-open": true
-          }
-        },
-        "collapsible_row_Eezjm6": {
-          "type": "collapsible-row",
-          "settings": {
-            "heading": "size (cm)",
-            "description": "<p>Use rows to highlight unique features, <br/>sizing information, <br/>or other sales information.</p>",
-            "page-content": "",
-            "liquid": "{{ product.metafields.custom.size_table_html_ja }}",
-            "default-open": true
-          }
-        },
-        "collapsible_row_KKkdfR": {
-          "type": "collapsible-row",
-          "settings": {
-            "heading": "size (inch)",
-            "description": "<p>Use rows to highlight unique features, <br/>sizing information, <br/>or other sales information.</p>",
-            "page-content": "",
-            "liquid": "{{ product.metafields.custom.size_table_html_en }}",
-            "default-open": false
-          }
-        },
         "complementary-products": {
           "type": "complementary-products",
           "settings": {
@@ -98,6 +98,7 @@
         },
         "social-sharing": {
           "type": "social-sharing",
+          "disabled": true,
           "settings": {
             "facebook-enabled": true,
             "x-enabled": true,
@@ -111,16 +112,23 @@
         "liquid_y73nA8",
         "heading",
         "price",
+        "description",
+        "collapsible_row_Eezjm6",
+        "collapsible_row_KKkdfR",
         "options",
         "quantity_selector_mXagy8",
         "buy-buttons",
         "unavailable_form_pqDNGH",
         "pickup",
-        "description",
-        "collapsible_row_Eezjm6",
-        "collapsible_row_KKkdfR",
         "complementary-products",
         "social-sharing"
+      ],
+      "custom_css": [
+        ".product--heading-blocks-wrapper {text-align: center;}",
+        ".product--heading-block--heading {font-size: 1.875rem; line-height: 2.0625rem; margin-block-end: 0.75rem;}",
+        "@media only screen and (max-width: 767px) {.product-price--wrapper {justify-content: center; }}",
+        ".product-price--original {font-size: 1.875rem; line-height: 1.875rem; letter-spacing: 0.1875rem; font-weight: 400;}",
+        ".collapsible-row--heading {font-size: 0.875rem; font-style: normal; font-weight: 700; line-height: 1.5625rem; /* 178.571% */}"
       ],
       "settings": {
         "container-width": "6",
@@ -147,6 +155,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "border": "none",
         "spacing-above": "full",

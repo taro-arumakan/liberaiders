@@ -5,3 +5,95 @@
 .main-product--wrapper{
   --spacing--block: var(--spacing--2);
 }
+
+@media only screen and (min-width: 768px) {
+  .product--heading-block {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:767px) {
+  .product--block[show-above-image="true"] {
+    display: none;
+  }
+}
+
+.product--heading-blocks-wrapper {
+  text-align: center;
+}
+
+.product--heading-block--heading {
+  font-size: 1.875rem;
+  line-height: 2.0625rem;
+  margin-block-end: 0.75rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .product-price--wrapper {
+    justify-content: center;
+  }
+}
+
+.product-price--original {
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+  letter-spacing: 0.1875rem;
+  font-weight: 400;
+}
+
+quantity-selector>label,
+.options-grid-title,
+.collapsible-row--heading {
+  font-size: 0.875rem !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 1.5625rem !important;
+}
+
+table#options_grid {
+  width: 100%;
+  border: none;
+}
+
+#options_grid th {
+  font-weight: normal;
+}
+
+#options_grid th,
+#options_grid td {
+  border-bottom: 1px solid var(--border--dark);
+  border-collapse: collapse;
+}
+
+table#options_grid>thead>tr>th,
+table#options_grid>tbody>tr>td {
+  text-align: center;
+}
+table#options_grid>tbody>tr>td>input[type=radio] {
+  margin: 0 !important;
+}
+
+quantity-selector>label,
+.options-grid-title {
+  margin-top: 1.06rem;
+  margin-bottom: 1rem;
+}
+
+quantity-selector,
+.options-grid {
+  padding: 0 var(--spacing--item) var(--spacing--item);
+}
+
+.quantity-selector--root {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+:root {
+  --border--dark: #4E4C4C;
+}
+
+input[type='radio'] {
+  accent-color: #232323;
+}
