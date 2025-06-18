@@ -34,13 +34,9 @@
       render 'custom-styles'
     -%}
 
-    <style>
-      @font-face {
-        font-family: 'FranklinGothicURWConDem';
-        src: url("{{ 'FranklinGothicURWConDem.woff2' | asset_url }}") format('woff2');
-        font-weight: normal;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
 
     {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'theme-custom.css' | asset_url | stylesheet_tag: preload: true }}
