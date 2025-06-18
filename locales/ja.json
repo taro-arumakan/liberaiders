@@ -65,7 +65,9 @@
     "a11y": {
       "close": "閉じる",
       "skip_main": "メインページへ",
-      "skip_pagination": "ページ表示を解除"
+      "skip_pagination": "ページ表示を解除",
+      "next": "",
+      "previous": ""
     },
     "browser_unsupported": "サポートされていないブラウザです",
     "consent_tracking": {
@@ -91,7 +93,8 @@
       "account_view_link": "お客様情報を表示",
       "cart": "カート",
       "search": "商品検索",
-      "back": "戻る"
+      "back": "戻る",
+      "toggle_drawer": ""
     },
     "footer": {
       "navigation": "Navigation"
@@ -161,7 +164,7 @@
       "signed_up_html": "入荷次第、通知をお送りいたします",
       "email_invalid": "無効なメールアドレスです"
     },
-    "tax_included": "税込",
+    "tax_included": "-tax in-",
     "unavailable": "Unavailable",
     "view_ar": "View in your space",
     "image_modal": "商品画像を拡大",
@@ -172,7 +175,11 @@
     "sku": "SKU",
     "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
     "total_reviews": "total reviews",
-    "unavailable_notice": "入荷通知を受け取る"
+    "unavailable_notice": "入荷通知を受け取る",
+    "change": "",
+    "choose_options": "",
+    "hotspot": "",
+    "quick_add": ""
   },
   "cart": {
     "your_cart": "カート",
@@ -191,7 +198,8 @@
     "checkout": "お会計",
     "empty_html": "<span data-item='rte-content'>商品が入っていません。<br> <a href='{{ collections_url }}'>お買い物を続ける</a></span>",
     "all_items_added": "全ての商品がカートに追加されました",
-    "title": "カート"
+    "title": "カート",
+    "empty_with_list_html": ""
   },
   "blog": {
     "filter": "Filter",
@@ -332,7 +340,6 @@
       "submit": "実行"
     }
   },
-  "gift_cards": {},
   "sections": {
     "contact": {
       "button": "送信",
@@ -381,6 +388,9 @@
       "price": "34",
       "product_title": "商品名",
       "vendor": "ベンダー"
+    },
+    "header": {
+      "empty_page_content": ""
     }
   }
 }
