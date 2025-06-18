@@ -16,7 +16,6 @@
 -%}
 
 {%- for block in section.blocks -%}
-  {% unless block.settings.show-above-image %}
     {%- liquid
       assign fit_together = false
       if block.type == 'collapsible-row'
@@ -33,6 +32,7 @@
       data-block-type="{{ block.type }}"
       data-fit-together="{{ fit_together }}"
       {{- block.shopify_attributes -}}
+      show-above-image="{{ block.settings.show-above-image }}"
     >
       {%- case block.type -%}
         {%- when 'overline' -%}
@@ -157,7 +157,7 @@
               product: product,
               block_settings: block.settings,
               main_product: main_product,
-              grid: true
+              grid: product.options.size == 2
             -%}
 
             {%- liquid
@@ -314,7 +314,6 @@
 
       {%- endcase -%}
     </div>
-  {% endunless %}
 {%- endfor -%}
 
 {%- unless quantity_added -%}

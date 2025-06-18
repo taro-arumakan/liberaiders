@@ -11,10 +11,17 @@
 
 {%- unless product.has_only_default_variant -%}
   {% if grid %}
-  {% liquid
-      assign swatches = 'none'
-      assign variant_style = 'radios'
-  %}
+    {% liquid
+        assign swatches = 'none'
+        assign variant_style = 'radios'
+    %}
+    <style>
+      product-options-element {
+        display: none !important;
+      }
+    </style>
+    <div class="options-grid">
+    <div class="options-grid-title">STOCK</div>
   {% endif %}
   <product-options-element
     class="product-options--root"
@@ -95,46 +102,46 @@
   </product-options-element>
 
   {% if grid %}
-    <table id="options_grid">
-      <thead>
-        <tr>
-          <th></th>
-          {%- for color in product.options_with_values[0].values -%}
-            <th>{{ color | escape }}</th>
-          {%- endfor -%}
-        </tr>
-      </thead>
-      <tbody>
-        {%- for size in product.options_with_values[1].values -%}
+      <table id="options_grid">
+        <thead>
           <tr>
-            <th>{{ size }}</th>
-            {%- for color in product.options_with_values[0].values -%}
-              {% liquid
-              assign this_variant = product.variants | where: "option1", color | where: "option2", size | first
-              %}
-              <td>
-                {{ this_variant.id }}
-                {%- if this_variant.available -%}
-                  <input
-                    class="radios--input"
-                    type="radio"
-                    id="{{ radios_name }}-{{ this_variant.id }}"
-                    name="option_selection"
-                    data-option1-name="{{ product.options_with_values[0].name | escape }}"
-                    data-option2-name="{{ product.options_with_values[1].name | escape }}"
-                    data-option1-value={{ color | escape }}
-                    data-option2-value={{ size | escape }}
-                    value="{{ this_variant.id }}"
-                  />
-                {%- else -%}
-                  <span class="unavailable" aria-hidden="true">×</span>
-                {%- endif -%}
-              </td>
+            <th></th>
+            {%- for size in product.options_with_values[1].values -%}
+              <th>{{ size | escape }}</th>
             {%- endfor -%}
           </tr>
-        {%- endfor -%}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {%- for color in product.options_with_values[0].values -%}
+            <tr>
+              <th>{{ color }}</th>
+              {%- for size in product.options_with_values[1].values -%}
+                {% liquid
+                assign this_variant = product.variants | where: "option1", color | where: "option2", size | first
+                %}
+                <td>
+                  {%- if this_variant.available -%}
+                    <input
+                      class="radios--input"
+                      type="radio"
+                      id="{{ radios_name }}-{{ this_variant.id }}"
+                      name="option_selection"
+                      data-option1-name="{{ product.options_with_values[0].name | escape }}"
+                      data-option2-name="{{ product.options_with_values[1].name | escape }}"
+                      data-option1-value={{ color | escape }}
+                      data-option2-value={{ size | escape }}
+                      value="{{ this_variant.id }}"
+                    />
+                  {%- else -%}
+                    <span class="unavailable" aria-hidden="true">×</span>
+                  {%- endif -%}
+                </td>
+              {%- endfor -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
     <script>
       function updateRadioSelection(optionName, value) {
         // Query all radio buttons with the specified data-option-name
