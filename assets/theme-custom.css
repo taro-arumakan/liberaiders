@@ -1,3 +1,14 @@
+.mobile-nav {
+  background-color: black;
+}
+a[data-item="nav-text"] {
+  color: white;
+}
+.mobile-nav--header svg,
+.mobile-nav--footer svg {
+  filter: invert(1);
+}
+
 .product--heading-block {
   margin: auto;
 }
@@ -97,3 +108,4 @@ quantity-selector,
 input[type='radio'] {
   accent-color: #232323;
 }
+
