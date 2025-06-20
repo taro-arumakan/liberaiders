@@ -16,7 +16,6 @@
       "blocks": {
         "1f422316-5885-4672-af57-e8d7e77d15d4": {
           "type": "menu",
-          "disabled": true,
           "settings": {
             "menu-title": "Help",
             "menu": "footer",
