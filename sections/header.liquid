@@ -314,11 +314,11 @@
   );
 </script>
 
-{%- if shop.customer_accounts_enabled -%}
+{% comment %} {%- if shop.customer_accounts_enabled -%}
   <element-relocator data-move-into=".mobile-nav--account" data-mq="none">
     {{- account_html -}}
   </element-relocator>
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 
 {%- if show_search -%}
   <element-relocator data-move-into=".mobile-nav--search"  data-mq="none">

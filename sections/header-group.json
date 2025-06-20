@@ -195,7 +195,7 @@
         "transparent-enabled": false,
         "transparent-white-text": true,
         "menu": "main-menu",
-        "search-enabled": true,
+        "search-enabled": false,
         "icons-enabled": true,
         "highlight-item": "Sale",
         "highlight-color": "#d02e2e",

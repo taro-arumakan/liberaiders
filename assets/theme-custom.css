@@ -8,8 +8,10 @@
   line-height: 26px;
   font-weight: 700;
 }
+.header--root .header--account {
+  display: unset;
+}
 
-.mobile-nav--header svg,
 .mobile-nav--footer svg {
   filter: invert(1);
   height: 2.1rem;
@@ -19,11 +21,14 @@
   align-items: center;
 }
 
+.mobile-nav--menu {
+  margin-top: 10rem;
+}
+
 .y-menu--parent-link:first-child>:is(a, button, modal-trigger),
 .y-menu--level-1--link:first-child>:is(a, button, modal-trigger),
 .y-menu--level-2--link:first-child>:is(a, button, modal-trigger),
 .y-menu--level-3--link:first-child>:is(a, button, modal-trigger) {
-  margin-top: 3rem;
   border-top: none;
 }
 .y-menu--parent-link>:is(a, button, modal-trigger),
