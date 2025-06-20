@@ -192,7 +192,7 @@
         "logo": "{{ shop.brand.logo }}",
         "logo-height": 35,
         "mobile-logo-height": 25,
-        "transparent-enabled": true,
+        "transparent-enabled": false,
         "transparent-white-text": true,
         "menu": "main-menu",
         "search-enabled": true,

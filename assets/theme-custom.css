@@ -1,12 +1,38 @@
 .mobile-nav {
   background-color: black;
 }
-a[data-item="nav-text"] {
+.mobile-nav a[data-item="nav-text"] {
   color: white;
+  justify-self: center;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
 }
+
 .mobile-nav--header svg,
 .mobile-nav--footer svg {
   filter: invert(1);
+}
+
+.mobile-nav--footer {
+  align-items: center;
+}
+.mobile-nav--footer svg {
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.y-menu--parent-link:first-child>:is(a, button, modal-trigger),
+.y-menu--level-1--link:first-child>:is(a, button, modal-trigger),
+.y-menu--level-2--link:first-child>:is(a, button, modal-trigger),
+.y-menu--level-3--link:first-child>:is(a, button, modal-trigger) {
+  border-top: none;
+}
+.y-menu--parent-link>:is(a, button, modal-trigger),
+.y-menu--level-1--link>:is(a, button, modal-trigger),
+.y-menu--level-2--link>:is(a, button, modal-trigger),
+.y-menu--level-3--link>:is(a, button, modal-trigger) {
+  border-bottom: none;
 }
 
 .product--heading-block {
