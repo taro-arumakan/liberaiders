@@ -31,7 +31,7 @@
         "liquid_HCVbBE": {
           "type": "liquid",
           "settings": {
-            "custom-liquid": "<style>\n  img {\n   height: 100%;\n   width: 120px;\n  }\n</style>\n<img src=\"//liberaiders.myshopify.com/cdn/shop/files/liberaiders.svg?v=1749084043 fetchpriority=\"high\">"
+            "custom-liquid": "<style>\n  .footer-logo > img {\n   height: 100%;\n   width: 120px;\n  }\n</style>\n<div class=\"footer-logo\">\n<img src=\"//liberaiders.myshopify.com/cdn/shop/files/liberaiders.svg?v=1749084043 fetchpriority=\"high\">\n</div>"
           }
         },
         "e305aec6-12d6-4184-8c5b-8aac302cb0dc": {
